@@ -89,6 +89,8 @@ mod posix {
             target_os = "nto",
             target_os = "hurd",
             target_os = "cygwin",
+
+            target_os = "nanvix",
         ))] {
             pub(super) const RTLD_LAZY: c_int = 1;
         } else {
@@ -129,6 +131,8 @@ mod posix {
             target_os = "nto",
             target_os = "hurd",
             target_os = "cygwin",
+
+            target_os = "nanvix",
         ))] {
             pub(super) const RTLD_NOW: c_int = 2;
         } else if #[cfg(all(target_os = "android",target_pointer_width = "32"))] {
@@ -153,6 +157,8 @@ mod posix {
             all(target_os = "linux", target_arch = "mips"),
             all(target_os = "linux", target_arch = "mips64"),
             target_os = "cygwin",
+            
+            target_os = "nanvix",
         ))] {
             pub(super) const RTLD_GLOBAL: c_int = 4;
         } else if #[cfg(any(
@@ -182,6 +188,7 @@ mod posix {
             target_os = "redox",
             target_os = "nto",
             target_os = "hurd",
+            
         ))] {
             pub(super) const RTLD_GLOBAL: c_int = 0x100;
         } else {
@@ -228,6 +235,8 @@ mod posix {
             target_os = "redox",
             target_os = "hurd",
             target_os = "cygwin",
+
+            target_os = "nanvix",
         ))] {
             pub(super) const RTLD_LOCAL: c_int = 0;
         } else {
